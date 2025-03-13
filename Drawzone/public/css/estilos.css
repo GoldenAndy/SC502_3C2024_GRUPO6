@@ -1,0 +1,462 @@
+/* Importar fuente personalizada */
+@font-face {
+    font-family: "WriteMeASong";
+    src: url("../fonts/Please write me a song.ttf") format("truetype");
+}
+
+/* Colores personalizados */
+:root {
+    --color-fondo: #F5F3EF;
+    --color-encabezado: #E0D5C7;
+    --color-busqueda: #C7B8A3;
+    --color-bordes: #A39381;
+    --color-titulos: #7A6753;
+    --color-texto: #5C4C3B;
+    --color-placeholder: #9f9f9f;
+    --color-blanco: #FFFFFF;
+}
+
+/* General */
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--color-fondo);
+    color: var(--color-texto);
+    margin: 0;
+    padding: 0;
+}
+
+/* Encabezado */
+.main-header {
+    background: var(--color-encabezado);
+    color: var(--color-texto);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.main-header h1 {
+    font-family: "WriteMeASong", cursive;
+    font-size: 2.5rem;
+    margin: 0;
+    color: var(--color-titulos);
+}
+
+.main-header .nav-link {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: var(--color-texto);
+    transition: color 0.3s ease;
+}
+
+.main-header .nav-link:hover {
+    color: var(--color-blanco);
+}
+
+/* Barra de búsqueda */
+.busqueda {
+    background-color: var(--color-busqueda);
+    border-bottom: 2px solid var(--color-bordes);
+    padding: 1rem;
+}
+
+.busqueda input {
+    border: 2px solid var(--color-bordes);
+    border-radius: 8px;
+    padding: 0.5rem;
+    font-family: "WriteMeASong", cursive;
+    font-weight: bold;
+    color: var(--color-texto);
+    background-color: var(--color-blanco);
+    ::placeholder {
+        color: var(--color-placeholder);
+        font-style: italic;
+    }
+}
+
+.busqueda button {
+    background-color: var(--color-bordes);
+    color: var(--color-blanco);
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.busqueda button:hover {
+    background-color: var(--color-titulos);
+    transform: scale(1.1);
+}
+
+.busqueda button i {
+    font-size: 1.2rem;
+}
+
+/* Sección de arte destacado */
+.destacados {
+    background-color: var(--color-blanco);
+    padding: 2rem;
+    border: 1px solid var(--color-bordes);
+    border-radius: 8px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.destacados h2 {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    color: var(--color-titulos);
+    text-align: center;
+}
+
+.destacados .galeria img {
+    border: 2px solid var(--color-bordes);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.destacados .galeria img:hover {
+    transform: scale(1.05);
+}
+
+
+/* Ventana de filtros */
+.offcanvas {
+    background-color: var(--color-blanco); /* Fondo claro */
+    color: var(--color-texto); /* Texto acorde */
+    border-right: 2px solid var(--color-bordes); /* Borde derecho */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra para efecto de profundidad */
+}
+
+.offcanvas-header {
+    background-color: var(--color-encabezado); /* Fondo encabezado del offcanvas */
+    border-bottom: 2px solid var(--color-bordes);
+}
+
+.offcanvas-title {
+    font-family: "WriteMeASong", cursive; /* Fuente personalizada */
+    font-size: 1.5rem;
+    color: var(--color-titulos);
+}
+
+.offcanvas-body {
+    font-family: 'Poppins', sans-serif;
+    padding: 1.5rem;
+}
+
+.offcanvas .form-check-input:checked {
+    background-color: var(--color-bordes); /* Fondo del checkbox activo */
+    border-color: var(--color-bordes);
+}
+
+.offcanvas .form-check-label {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    color: var(--color-texto);
+}
+
+.offcanvas .form-range {
+    accent-color: var(--color-titulos); /* Color del control del rango */
+}
+
+.offcanvas .btn-primary {
+    background-color: var(--color-bordes);
+    border: none;
+    color: var(--color-blanco);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.offcanvas .btn-primary:hover {
+    background-color: var(--color-titulos);
+    transform: scale(1.05);
+}
+
+
+
+/* Asegura que la página ocupe toda la altura de la pantalla */
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Contenedor principal para que el contenido empuje al footer */
+.main-content {
+    flex: 1;
+    padding-bottom: 20px; /* Espacio antes del footer */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Asegura que el contenido no se encime */
+}
+
+/* 🔹 Estilos del Footer */
+.main-footer {
+    background: var(--color-encabezado);
+    color: var(--color-texto);
+    font-size: 0.9rem;
+    padding: 40px 0; /* Más espacio para mejor diseño */
+    text-align: center;
+    width: 100%;
+}
+
+/* 🔹 Estructura de las columnas en el Footer */
+.main-footer .row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* 🔹 Ajuste para que las columnas tengan mejor alineación */
+.main-footer .col-md-3 {
+    text-align: left;
+    flex: 1;
+    min-width: 200px; /* Asegurar tamaño responsivo */
+    margin-bottom: 15px; /* Espaciado entre secciones */
+}
+
+/* 🔹 Estilos de los títulos */
+.main-footer h5 {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: var(--color-titulos);
+}
+
+/* 🔹 Ajustes de listas en el footer */
+.main-footer ul {
+    padding: 0;
+    list-style: none;
+}
+
+/* 🔹 Links del Footer */
+.main-footer ul li a {
+    text-decoration: none;
+    color: var(--color-texto);
+    transition: color 0.3s ease-in-out;
+    display: inline-block;
+    margin-bottom: 5px;
+}
+
+.main-footer ul li a:hover {
+    color: var(--color-titulos);
+    text-decoration: underline;
+}
+
+/* 🔹 Iconos de redes sociales */
+.social-icons {
+    display: flex;
+    gap: 10px;
+    justify-content: flex-start;
+}
+
+.social-icons a {
+    font-size: 1.5rem;
+    color: var(--color-texto);
+    transition: color 0.3s ease-in-out, transform 0.2s;
+}
+
+.social-icons a:hover {
+    color: var(--color-titulos);
+    transform: scale(1.1);
+}
+
+/* 🔹 Centrar el copyright */
+.footer-copyright {
+    margin-top: 25px;
+    font-size: 0.85rem;
+    text-align: center;
+    border-top: 1px solid var(--color-bordes);
+    padding-top: 15px;
+}
+
+/*----------PREVISUALIZACIÓN---------------*/
+
+/* 🔹 Contenedor de previsualización (centrado) */
+#preview-container {
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente si es necesario */
+    width: 100%;
+    margin-top: 15px;
+}
+
+/* 🔹 Previsualización de la imagen (circular) */
+#preview {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid var(--color-titulos);
+    background-color: var(--color-bordes);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto; /* Asegurar centrado automático */
+}
+
+/* 🔹 Imagen dentro de la previsualización */
+#preview img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+
+
+/* HASTA ACÁ LLEGAN LOS ESTILOS DEL INDEX */
+
+
+/* ACÁ EMPIEZAN LOS DEL LOGIN */
+
+/* Formulario principal */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+}
+
+/* Contenedor del formulario */
+.form-container {
+    max-width: 600px; /* Ancho máximo del formulario */
+    width: 100%; /* Asegura responsividad */
+    background-color: var(--color-blanco);
+    border: 1px solid var(--color-bordes);
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Etiquetas */
+form label {
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    color: var(--color-titulos);
+}
+
+/* Inputs */
+form input, form select, form textarea {
+    border: 2px solid var(--color-bordes);
+    border-radius: 8px;
+    padding: 0.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-size: 1rem;
+    color: var(--color-texto);
+    background-color: var(--color-blanco);
+    transition: border-color 0.3s ease;
+}
+
+form input:focus, form select:focus, form textarea:focus {
+    border-color: var(--color-titulos);
+    outline: none;
+}
+
+/* Placeholder */
+form input::placeholder {
+    color: var(--color-placeholder);
+    font-style: italic;
+}
+
+/* Botones */
+button[type="submit"] {
+    background-color: var(--color-bordes);
+    color: var(--color-blanco);
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1.5rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--color-titulos);
+    transform: scale(1.05);
+}
+
+/* Botón "Recortar Imagen" */
+#crop-image-button {
+    background-color: var(--color-bordes);
+    color: var(--color-blanco);
+    border: none;
+    border-radius: 8px;
+    padding: 0.5rem 1rem;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#crop-image-button:hover {
+    background-color: var(--color-titulos);
+    transform: scale(1.05);
+}
+
+
+/* Botón para agregar campos */
+#add-social-link {
+    background-color: var(--color-bordes);
+    color: var(--color-blanco);
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#add-social-link:hover {
+    background-color: var(--color-titulos);
+    transform: scale(1.05);
+}
+
+/* Botón para eliminar campos */
+.remove-social-link {
+    background-color: var(--color-bordes);
+    color: var(--color-blanco);
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.remove-social-link:hover {
+    background-color: var(--color-titulos);
+    transform: scale(1.05);
+}
+
+/* Sección de redes sociales */
+#social-links-section {
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 1px dashed var(--color-bordes);
+    border-radius: 8px;
+    background-color: var(--color-busqueda);
+}
+
+/* Mensaje adicional */
+form p {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.9rem;
+    color: var(--color-placeholder);
+    margin-top: -10px;
+}
+
+/* Título del formulario */
+main h1 {
+    font-family: "WriteMeASong", cursive;
+    color: var(--color-titulos);
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+/* Checkbox personalizado */
+.form-check-input:checked {
+    background-color: var(--color-bordes);
+    border-color: var(--color-bordes);
+}
+
+.form-check-input:focus {
+    box-shadow: 0 0 0 0.25rem rgba(122, 103, 83, 0.25);
+}
