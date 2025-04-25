@@ -20,15 +20,15 @@ function enviarCorreoActivacion($email, $token) {
         $mail->SMTPSecure = "tls";
         $mail->Port = 587;
 
-        // 📬 Destinatario
+        // Destinatario
         $mail->setFrom(EMAIL_USER, "DrawZone");
         $mail->addAddress($email);
 
-        // 📄 Contenido del correo
+        // Contenido del correo
         $mail->isHTML(true);
         $mail->Subject = "Activa tu cuenta en DrawZone";
         $mail->Body = "
-            <h2>¡Bienvenido a DrawZone!</h2>
+            <h2>Bienvenido a DrawZone!</h2>
             <p>Para activar tu cuenta, haz clic en el siguiente enlace:</p>
             <a href='http://localhost/DrawZone/public/app/handlers/procesar_activacion.php?token=$token' style='padding: 10px 15px; background-color: #28a745; color: white; text-decoration: none; border-radius: 5px;'>Activar cuenta</a>
             <p>Si no creaste esta cuenta, ignora este correo.</p>

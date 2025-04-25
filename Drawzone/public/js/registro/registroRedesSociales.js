@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const rolRadios = document.querySelectorAll("input[name='rol']");
     const redesSocialesDiv = document.getElementById("redes-sociales");
 
-    // Mostrar/Ocultar redes sociales dependiendo del rol seleccionado
+
     rolRadios.forEach(radio => {
         radio.addEventListener("change", function () {
             if (this.value === "artista" || this.value === "ambos") {
@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
-    // Validación de redes sociales
+
     function validarRedSocial(input, regex, errorId) {
         const valor = input.value.trim();
         const errorMsg = document.getElementById(errorId);

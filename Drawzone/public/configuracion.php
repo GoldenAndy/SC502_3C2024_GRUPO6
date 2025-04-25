@@ -36,7 +36,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <div class="container my-5">
         <h2 class="text-center">Configuración de Perfil</h2>
 
-        <!-- Pestañas de Configuración -->
         <ul class="nav nav-tabs mt-4" id="configTabs">
             <li class="nav-item">
                 <a class="nav-link active" id="info-tab" data-bs-toggle="tab" href="#info">Información de Cuenta</a>
@@ -47,7 +46,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </ul>
 
         <div class="tab-content mt-4">
-            <!-- Información de Cuenta -->
             <div class="tab-pane fade show active" id="info">
                 <form method="POST" enctype="multipart/form-data">
                     <div class="mb-3">
@@ -68,7 +66,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 </form>
             </div>
 
-            <!-- Personalización de Perfil -->
             <div class="tab-pane fade" id="perfil">
                 <form method="POST">
                     <div class="mb-3">
@@ -76,9 +73,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <textarea class="form-control" name="tos"><?php echo $_SESSION['user']['tos'] ?? "No hago contenido NSFW. Tiempo de entrega: 7 días."; ?></textarea>
                     </div>
 
-                    <!-- Cambiar Colores -->
                     <h4>Paleta de Colores del Perfil</h4>
-                    <div class="d-flex justify-content-center gap-3"> <!-- 📌 Mejora el espaciado -->
+                    <div class="d-flex justify-content-center gap-3">
                         <div class="text-center">
                             <label class="form-label">Color Primario</label>
                             <input type="color" class="form-control form-control-color" name="color_primary" 
@@ -104,9 +100,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         </div>
     </div>
 
-</div> <!-- 📌 Cierre del contenedor principal -->
+</div>
 
-<!-- Aplicar los cambios de colores en tiempo real -->
 <?php if (!empty($_SESSION['user']['colors'])): ?>
 <style>
     :root {

@@ -47,3 +47,44 @@ function subirImagenACloudinary($filePath, $folder = "drawzone_perfiles") {
         return false;
     }
 }
+
+
+
+function subirImagenGaleriaACloudinary($filePath, $folder = "galerias/galerias_personales") {
+    try {
+        if (!file_exists($filePath)) {
+            throw new Exception("El archivo no existe en la ruta temporal.");
+        }
+
+        $resultado = (new UploadApi())->upload($filePath, [
+            "folder" => $folder,
+            "resource_type" => "image",
+            "use_filename" => true,
+            "unique_filename" => false,
+            "overwrite" => false
+        ]);
+
+        return $resultado;
+    } catch (ApiError $e) {
+        error_log("❌ Error en Cloudinary (galería): " . $e->getMessage());
+        return false;
+    } catch (Exception $e) {
+        error_log("❌ Error general (galería): " . $e->getMessage());
+        return false;
+    }
+}
+
+/**
+ * Elimina una imagen relacionada con una publicación del muro desde Cloudinary
+ *
+ * @param string $publicId
+ * @return array|false
+ */
+function eliminarPublicacionCloudinary($publicId) {
+    try {
+        return (new UploadApi())->destroy($publicId, ['resource_type' => 'image']);
+    } catch (Exception $e) {
+        error_log("❌ Error al eliminar publicación en Cloudinary: " . $e->getMessage());
+        return false;
+    }
+}

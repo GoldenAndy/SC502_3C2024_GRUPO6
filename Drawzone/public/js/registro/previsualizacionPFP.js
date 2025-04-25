@@ -9,13 +9,12 @@ document.addEventListener("DOMContentLoaded", function () {
             const reader = new FileReader();
 
             reader.onload = function (e) {
-                previewImage.src = e.target.result; // Asigna la imagen cargada
-                previewImage.style.display = "block"; // Asegura que la imagen se muestre
+                previewImage.src = e.target.result;
+                previewImage.style.display = "block";
             };
 
             reader.readAsDataURL(file);
         } else {
-            // Si no hay archivo, ocultamos la previsualización
             previewImage.src = "";
             previewImage.style.display = "none";
         }

@@ -1,17 +1,14 @@
 <?php
-require __DIR__ . '/config/database.php'; // NO TOCAR, conecta a la BD de Drawzone
+require __DIR__ . '/config/database.php'; // PRUEBA DE CONEXIÓN CON LA BASE DE DATOS
 
 try {
-    // 📌 Obtener conexión a la BD
     $pdo = Database::getConnection();
 
-    // 📌 Consulta para obtener los primeros 5 usuarios
     $sql = "SELECT idUsuario, usuario, email, rol FROM usuarios LIMIT 5";
     $stmt = $pdo->query($sql);
 
     echo "<h2 style='color: green;'>✅ Conexión a la base de datos establecida correctamente!</h2>";
 
-    // 🔹 Si hay usuarios, mostrarlos
     if ($stmt->rowCount() > 0) {
         echo "<h3>Usuarios registrados:</h3>";
         echo "<table border='1' cellpadding='5' cellspacing='0' style='border-collapse: collapse;'>";

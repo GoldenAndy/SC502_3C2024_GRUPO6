@@ -1,10 +1,8 @@
 <?php
-require './config/cloudinary.php'; // Cargar la configuración de Cloudinary
-
+require './config/cloudinary.php';
+//PRUEBAS DE FUNCIONAMIENTO DE CLOUDINARY
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['imagen'])) {
-    $fileTmpPath = $_FILES['imagen']['tmp_name']; // Obtener la ruta temporal del archivo
-
-    // Intentar subir la imagen a Cloudinary
+    $fileTmpPath = $_FILES['imagen']['tmp_name'];
     $resultado = subirImagenACloudinary($fileTmpPath, "drawzone_perfiles");
 
     if ($resultado) {

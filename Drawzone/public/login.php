@@ -5,14 +5,13 @@
     <div class="form-container p-4 shadow-lg rounded">
         <h2 class="text-center mb-4">Iniciar Sesión</h2>
 
-        <!-- ✅ Mensaje de éxito si la cuenta se activó correctamente o el usuario se registró -->
         <?php if (isset($_GET['success'])): ?>
             <div class="alert alert-success text-center">
                 <?= htmlspecialchars($_GET['success']); ?>
             </div>
         <?php endif; ?>
 
-        <!-- ❌ Mensaje de error si hubo algún problema -->
+        <!-- Mensaje de error si hubo algún problema -->
         <?php if (isset($_GET['error'])): ?>
             <div class="alert alert-danger text-center">
                 <?= htmlspecialchars($_GET['error']); ?>

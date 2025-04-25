@@ -460,3 +460,41 @@ main h1 {
 .form-check-input:focus {
     box-shadow: 0 0 0 0.25rem rgba(122, 103, 83, 0.25);
 }
+
+
+.title-glow {
+    text-shadow: 0 0 8px rgba(0, 132, 255, 0.6);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.section-block {
+    background: linear-gradient(145deg, #f5f7fa, #e4e7ed);
+    border-left: 6px solid #007bff;
+    padding: 1.5rem;
+    border-radius: 1rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+.section-block:hover {
+    transform: scale(1.015);
+}
+
+.icon-badge {
+    background: #007bff;
+    color: white;
+    padding: 0.4rem 0.6rem;
+    border-radius: 50%;
+    font-size: 1rem;
+    display: inline-block;
+    margin-right: 0.5rem;
+}
+
+.glass-card {
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(8px);
+    border-radius: 1rem;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.1);
+    padding: 2rem;
+}
